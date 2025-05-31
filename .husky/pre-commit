@@ -3,4 +3,5 @@
 
 echo "✅ Husky pre-commit hook is working"
 
+npm run format
 npm run lint

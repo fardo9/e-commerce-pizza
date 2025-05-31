@@ -28,7 +28,7 @@
       "@/features/*": ["./src/features/*"],
       "@/widgets/*": ["./src/widgets/*"],
       "@/shared/*": ["./src/shared/*"],
-      
+
       // sub-layers
       "@/shared/ui/*": ["./src/shared/ui/*"],
       "@/shared/lib/*": ["./src/shared/lib/*"],
