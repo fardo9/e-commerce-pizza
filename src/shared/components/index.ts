@@ -1,4 +1,4 @@
-export { default as Container } from '@components/container/Container'
+export { default as Сontainer } from '@components/container/Container'
 export { default as FilterCheckbox } from '@components/filter-checkbox/FilterCheckbox'
 export { default as Header } from '@components/header/Header'
 export { default as RangeSlider } from '@components/range-slider/RangeSlider'

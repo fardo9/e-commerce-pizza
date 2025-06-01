@@ -3,8 +3,12 @@ import { IProps } from '@shared/types'
 import { Skeleton } from '@components/ui'
 import { CategoryLink } from '@entities/category/ui/CategoryLink'
 
+interface Items {
+  name: string
+  id: number
+}
 interface Props extends IProps {
-  items?: any[]
+  items?: Items[]
   activeID?: number | null
   isLoading?: boolean
 }

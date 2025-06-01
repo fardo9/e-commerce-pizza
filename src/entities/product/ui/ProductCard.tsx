@@ -9,7 +9,6 @@ import { Button, Title } from '@components/ui'
 export interface Ingredient {
   id: number
   name: string
-  [key: string]: any
 }
 
 interface Props extends IProps {

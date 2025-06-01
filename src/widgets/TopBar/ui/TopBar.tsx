@@ -6,8 +6,12 @@ import { Container } from '@components'
 import { CategoriesList } from '@features/categoryList/ui/CategoriesList'
 import { SortPopup } from '@features/sort-product/ui/SortPopup'
 
+interface Categories {
+  id: number
+  name: string
+}
 interface Props extends IProps {
-  categories?: any[] // Category[]
+  categories?: Categories[]
   isLoading?: boolean
   activeID?: string | null
 }

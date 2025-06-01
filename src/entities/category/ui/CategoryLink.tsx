@@ -12,7 +12,7 @@ interface Props {
 
 export const CategoryLink = ({ name, id, isActive }: Props) => (
   <Link
-    href="/"
+    href={`./#${id}`}
     className={cn(
       'flex items-center font-bold text-primary h-11 rounded-2xl px-5',
       isActive && 'bg-white shadow-md shadow-gray-200 text-primary'
