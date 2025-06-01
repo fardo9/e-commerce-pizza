@@ -2,7 +2,7 @@ import React from 'react'
 
 import { cn } from '@shared/lib/utils'
 import { IProps } from '@shared/types'
-import { Container } from '@components'
+import Container from '@components/container/Container'
 import { CategoriesList } from '@features/categoryList/ui/CategoriesList'
 import { SortPopup } from '@features/sort-product/ui/SortPopup'
 
