@@ -17,8 +17,8 @@ export const FilterProducts: FC<IProps> = ({ className }) => {
       <Title text="Filter" size="sm" className="mb-5 font-bold" />
 
       <div className="flex flex-col gap-4">
-        <FilterCheckbox text="Dought type" value="types" />
-        <FilterCheckbox text="Size" value="sizes" />
+        <FilterCheckbox label="Dought type" value="types" />
+        <FilterCheckbox label="Size" value="sizes" />
       </div>
 
       <div className="mt-5 border-y border-y-neutral-100 py-6 pb-7">
@@ -47,14 +47,7 @@ export const FilterProducts: FC<IProps> = ({ className }) => {
         </div>
 
         <div className="flex mb-5">
-          <RangeSlider
-            ref={sliderRef}
-            min={0}
-            max={1000}
-            step={10}
-            value={values}
-            onValueChange={setValues}
-          />
+          <RangeSlider ref={sliderRef} min={0} max={1000} step={10} value={values} onValueChange={setValues} />
         </div>
       </div>
     </div>

@@ -1,44 +1,33 @@
 'use client'
 
-import React from 'react'
+import type { ReactNode } from 'react'
 
 import { Checkbox } from '@components/ui'
 
-interface Props {
-  text: string
+interface FilterCheckboxProps {
+  label: string
   name?: string
   value: string
-  onCheckedChange?: (checked: boolean) => void
   checked?: boolean
-  endAdornment?: React.ReactNode
+  onCheckedChange?: (checked: boolean) => void
+  endAdornment?: ReactNode
 }
 
-const FilterCheckbox: React.FC<Props> = ({
-  text,
-  name,
-  value,
-  onCheckedChange,
-  checked,
-  endAdornment
-}) => {
+export function FilterCheckbox({ label, name, value, checked, onCheckedChange, endAdornment }: FilterCheckboxProps) {
+  const id = `checkbox-${String(name)}-${String(value)}`
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center gap-2">
       <Checkbox
-        onCheckedChange={onCheckedChange}
+        id={id}
         checked={checked}
+        onCheckedChange={onCheckedChange}
         value={value}
-        className="rounded-[8px] w-6 h-6"
-        id={`checkbox-${String(name)}-${String(value)}`}
+        className="w-6 h-6 rounded-[8px]"
       />
-      <label
-        htmlFor={`checkbox-${String(name)}-${String(value)}`}
-        className="leading-none cursor-pointer flex-1"
-      >
-        {text}
+      <label htmlFor={id} className="flex-1 cursor-pointer leading-none">
+        {label}
       </label>
       {endAdornment}
     </div>
   )
 }
-
-export default FilterCheckbox

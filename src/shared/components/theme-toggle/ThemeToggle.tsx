@@ -4,16 +4,12 @@ import { useTheme } from 'next-themes'
 
 import { Button } from '@components/ui'
 
-const ThemeToggle = () => {
+export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <div>
-      <Button onClick={() => setTheme(theme => (theme === 'dark' ? 'light' : 'dark'))}>
-        {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-      </Button>
-    </div>
+    <Button onClick={() => setTheme(prev => (prev === 'dark' ? 'light' : 'dark'))}>
+      {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+    </Button>
   )
 }
-
-export default ThemeToggle

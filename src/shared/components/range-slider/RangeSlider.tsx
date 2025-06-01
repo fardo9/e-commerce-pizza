@@ -1,13 +1,13 @@
 'use client'
 
-import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react'
+import React, { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react'
 import * as SliderPrimitive from '@radix-ui/react-slider'
 
 import { cn } from '@shared/lib/utils'
 
-import { RangeSliderRef, SliderProps } from './types'
+import type { RangeSliderRef, SliderProps } from './types'
 
-const RangeSlider = forwardRef<RangeSliderRef, SliderProps>(
+export const RangeSlider = forwardRef<RangeSliderRef, SliderProps>(
   ({ className, min, max, step, formatLabel, value, onValueChange, ...props }, ref) => {
     const [localValue, setLocalValue] = useState<[number, number]>(value)
     const internalRef = useRef<HTMLDivElement>(null)
@@ -18,13 +18,17 @@ const RangeSlider = forwardRef<RangeSliderRef, SliderProps>(
 
     useImperativeHandle(ref, () => ({
       getValue: () => localValue,
-      setValue: (val: [number, number]) => setLocalValue(val)
+      setValue: val => setLocalValue(val)
     }))
 
-    const handleChange = (vals: number[]) => {
-      setLocalValue(vals as [number, number])
-      onValueChange(vals as [number, number])
-    }
+    const handleChange = useCallback(
+      (vals: number[]) => {
+        const newValue = vals as [number, number]
+        setLocalValue(newValue)
+        onValueChange(newValue)
+      },
+      [onValueChange]
+    )
 
     return (
       <SliderPrimitive.Root
@@ -60,5 +64,3 @@ const RangeSlider = forwardRef<RangeSliderRef, SliderProps>(
 )
 
 RangeSlider.displayName = 'RangeSlider'
-
-export default RangeSlider

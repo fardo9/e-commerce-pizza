@@ -1,4 +1,4 @@
-import Container from '@components/container/Container'
+import { Container } from '@components'
 import { Title } from '@components/ui'
 import { FilterProducts } from '@features/filter-products'
 import { TopBar } from '@widgets/TopBar'
