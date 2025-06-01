@@ -7,7 +7,7 @@ import { cn } from '@shared/lib/utils'
 
 import type { RangeSliderRef, SliderProps } from './types'
 
-export const RangeSlider = forwardRef<RangeSliderRef, SliderProps>(
+const RangeSlider = forwardRef<RangeSliderRef, SliderProps>(
   ({ className, min, max, step, formatLabel, value, onValueChange, ...props }, ref) => {
     const [localValue, setLocalValue] = useState<[number, number]>(value)
     const internalRef = useRef<HTMLDivElement>(null)
@@ -64,3 +64,5 @@ export const RangeSlider = forwardRef<RangeSliderRef, SliderProps>(
 )
 
 RangeSlider.displayName = 'RangeSlider'
+
+export default RangeSlider

@@ -1,5 +1,5 @@
 export { Container } from '@components/container/Container'
 export { FilterCheckbox } from '@components/filter-checkbox/FilterCheckbox'
 export { Header } from '@components/header/Header'
-export { RangeSlider } from '@components/range-slider/RangeSlider'
+export { default as RangeSlider } from '@components/range-slider/RangeSlider'
 export { ThemeToggle } from '@components/theme-toggle/ThemeToggle'
