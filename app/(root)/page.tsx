@@ -1,5 +1,5 @@
-import React from 'react'
+import HomePage from '@pages/home/ui/HomePage'
 
-export default function HomePage() {
-  return <div>HomePage</div>
+export default function RootPage() {
+  return <HomePage />
 }

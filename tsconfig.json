@@ -18,34 +18,25 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@/app/*": ["./src/app/*"],
-      "@/pages/*": ["./src/pages/*"],
+      "@app/*": ["app/*"],
+      "@pages/*": ["src/pages/*"],
+      "@widgets/*": ["src/widgets/*"],
+      "@features/*": ["src/features/*"],
+      "@entities/*": ["src/entities/*"],
 
-      // FSD-layers
-      "@/entities/*": ["./src/entities/*"],
-      "@/features/*": ["./src/features/*"],
-      "@/widgets/*": ["./src/widgets/*"],
-      "@/shared/*": ["./src/shared/*"],
+      "@components": ["src/shared/components"],
+      "@components/*": ["src/shared/components/*"],
 
-      // sub-layers
-      "@/shared/ui/*": ["./src/shared/ui/*"],
-      "@/shared/lib/*": ["./src/shared/lib/*"],
-      "@/shared/hooks/*": ["./src/shared/hooks/*"],
-      "@/shared/types/*": ["./src/shared/types/*"],
-      "@/shared/constants/*": ["./src/shared/constants/*"],
-
-      // Short alias for ShadCN-UI
-      "ui/*": ["./src/shared/ui/*"],
-
-      // Others
-      "@/components/*": ["./src/components/*"],
-      "@/services/*": ["./src/services/*"],
-      "@/lib/*": ["./src/lib/*"],
-      "@/hooks/*": ["./src/hooks/*"]
-    }
+      "@ui/*": ["src/shared/ui/*"],
+      "@shared/*": ["src/shared/*"],
+      "@lib/*": ["src/shared/lib/*"],
+      "@types/*": ["src/shared/types/*"]
+    },
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
+
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
