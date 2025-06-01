@@ -1,7 +1,7 @@
 import { Nunito } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
-import { Header } from '@shared/components'
+import { Header } from '@features/header/header'
 
 import './globals.css'
 
