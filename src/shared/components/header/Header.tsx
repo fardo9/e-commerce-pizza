@@ -5,8 +5,7 @@ import { ArrowRight, ShoppingCart, User } from 'lucide-react'
 
 import { cn } from '@shared/lib/utils'
 import { IProps } from '@shared/types'
-import { ThemeToggle } from '@components'
-import Container from '@components/container/Container'
+import { Container, ThemeToggle } from '@components'
 import { Button } from '@components/ui'
 
 export default function Header({ className }: IProps) {
