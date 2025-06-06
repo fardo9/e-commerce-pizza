@@ -8,9 +8,16 @@ import { FilterCheckbox, RangeSlider } from '@components'
 import { RangeSliderRef } from '@components/range-slider/types'
 import { Input, Title } from '@components/ui'
 
+import { useIngredients } from '@/src/entities/ingredients/model/use-ingredients'
+import { IngredientCheckboxGroup } from '@/src/entities/ingredients/ui/ingredient-checkbox-group'
+
 export const FilterProducts: FC<IProps> = ({ className }) => {
+  const { ingredients, isLoadingIngredients, isError } = useIngredients()
+
   const { values, setValues, setPriceFrom, setPriceTo } = useRangeSliderState([0, 450])
   const sliderRef = useRef<RangeSliderRef>(null)
+
+  console.log('ingredients', ingredients)
 
   return (
     <div className={className}>
@@ -48,6 +55,22 @@ export const FilterProducts: FC<IProps> = ({ className }) => {
 
         <div className="flex mb-5">
           <RangeSlider ref={sliderRef} min={0} max={1000} step={10} value={values} onValueChange={setValues} />
+        </div>
+
+        <div className="mt-10">
+          <IngredientCheckboxGroup
+            title="Ingredients"
+            name="ingredients"
+            className="mt-5"
+            limit={6}
+            defaultItems={ingredients?.slice(0, 5)}
+            items={ingredients ?? []}
+            isLoading={isLoadingIngredients}
+            isError={false}
+            error={isError}
+            onClickCheckbox={() => {}}
+            // selected={filter.selectedIngredients}
+          />
         </div>
       </div>
     </div>

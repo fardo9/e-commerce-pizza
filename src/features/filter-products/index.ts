@@ -1,1 +1,1 @@
-export { FilterProducts } from './ui/FilterProducts'
+export { FilterProducts } from './ui/filter-products'

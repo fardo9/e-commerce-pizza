@@ -6,13 +6,12 @@ import { cn } from '@shared/lib/utils'
 
 interface Props {
   name: string
-  id: number
   isActive?: boolean
 }
 
-export const CategoryLink = ({ name, id, isActive }: Props) => (
+export const CategoryLink = ({ name, isActive }: Props) => (
   <Link
-    href={`./#${id}`}
+    href={`./#${name.toLowerCase()}`}
     className={cn(
       'flex items-center font-bold text-primary h-11 rounded-2xl px-5',
       isActive && 'bg-white shadow-md shadow-gray-200 text-primary'

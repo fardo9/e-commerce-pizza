@@ -1,10 +1,11 @@
 import { Nunito } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
-import { Header } from '@features/header/header'
+import { Header } from '@features/header'
 
 import './globals.css'
 
+import TanStackProvider from './_providers/TanStackProvider'
 import { ThemeProvider } from './_providers/ThemeProvider'
 
 const nunito = Nunito({
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={nunito.className}>
-        <ThemeProvider>
-          <Header />
-          {children}
-        </ThemeProvider>
+        <TanStackProvider>
+          <ThemeProvider>
+            <Header />
+            {children}
+          </ThemeProvider>
+        </TanStackProvider>
 
         <SpeedInsights />
       </body>

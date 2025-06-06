@@ -3,24 +3,15 @@ import React from 'react'
 import { cn } from '@shared/lib/utils'
 import { IProps } from '@shared/types'
 import { Container } from '@components'
-import { CategoriesList } from '@features/categoryList/ui/CategoriesList'
 import { SortPopup } from '@features/sort-product/ui/SortPopup'
 
-interface Categories {
-  id: number
-  name: string
-}
-interface Props extends IProps {
-  categories?: Categories[]
-  isLoading?: boolean
-  activeID?: string | null
-}
+import { CategoriesListContainer } from '@/src/features/category-list/ui/categories-list-container'
 
-export const TopBar: React.FC<Props> = ({ className, categories, isLoading }) => {
+export function TopBar({ className }: IProps) {
   return (
     <div className={cn('sticky top-0 py-5 shadow-lg shadow-black/5 z-10', className)}>
       <Container className="flex justify-between">
-        <CategoriesList items={categories} isLoading={isLoading} />
+        <CategoriesListContainer />
         <SortPopup />
       </Container>
     </div>
