@@ -5,8 +5,7 @@ import { Header } from '@features/header'
 
 import './globals.css'
 
-import TanStackProvider from './_providers/TanStackProvider'
-import { ThemeProvider } from './_providers/ThemeProvider'
+import { TanStackProvider, ThemeProvider } from './_providers'
 
 const nunito = Nunito({
   subsets: ['cyrillic'],

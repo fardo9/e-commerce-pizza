@@ -1,29 +1,24 @@
 'use client'
 
-import { ReactNode, useRef } from 'react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactNode, useState } from 'react'
+import { dehydrate, HydrationBoundary, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
-const TanStackProvider = ({ children }: { children: ReactNode }) => {
-  console.log(',process.env.NODE_ENV', process.env.NODE_ENV)
-  const queryClientRef = useRef<QueryClient | null>(null)
-  if (!queryClientRef.current) {
-    queryClientRef.current = new QueryClient({
-      defaultOptions: {
-        queries: {
-          staleTime: 0,
-          refetchInterval: 0
-        }
-      }
-    })
-  }
+import { getQueryClient } from '@/src/shared/lib/react-query'
+
+interface Props {
+  children: ReactNode
+}
+
+export const TanStackProvider = ({ children }: Props) => {
+  const [queryClient] = useState(getQueryClient)
 
   return (
-    <QueryClientProvider client={queryClientRef.current!}>
-      {children}
-      {process.env.NODE_ENV === 'development' && <ReactQueryDevtools initialIsOpen={false} />}
+    <QueryClientProvider client={queryClient}>
+      <HydrationBoundary state={dehydrate(queryClient)}>
+        {children}
+        {process.env.NODE_ENV === 'development' && <ReactQueryDevtools initialIsOpen={false} />}
+      </HydrationBoundary>
     </QueryClientProvider>
   )
 }
-
-export default TanStackProvider
