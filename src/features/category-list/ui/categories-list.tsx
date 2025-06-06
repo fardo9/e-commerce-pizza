@@ -31,7 +31,7 @@ export const CategoriesList: React.FC<Props> = ({ className, items, isLoading })
         </div>
       ) : (
         items?.map(({ name, id }: { name: string; id: number }) => (
-          <CategoryLink key={id} id={id} name={name} isActive={activeCategoryId === id} />
+          <CategoryLink key={id} name={name} isActive={activeCategoryId === id} />
         ))
       )}
     </div>

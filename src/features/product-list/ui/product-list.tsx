@@ -12,7 +12,7 @@ import { useObserveCategory } from '../model/use-observe-category'
 export const ProductsList: FC<ProductListProps> = ({ title, items, listClassName, categoryId, className }) => {
   const intersectionRef = useRef<HTMLDivElement>(null)
 
-  useObserveCategory(intersectionRef, categoryId, title)
+  useObserveCategory(intersectionRef, categoryId)
 
   return (
     <div className={className} id={title.toLocaleLowerCase()} ref={intersectionRef}>
