@@ -62,14 +62,10 @@ export const FilterProducts: FC<IProps> = ({ className }) => {
             title="Ingredients"
             name="ingredients"
             className="mt-5"
-            limit={6}
-            // defaultItems={ingredients?.slice(0, 5)}
+            limit={5}
             items={ingredients ?? []}
             isLoading={isLoadingIngredients}
-            // isError={false}
-            // error={isError}
             onClickCheckbox={() => {}}
-            // selected={filter.selectedIngredients}
           />
         </div>
       </div>
