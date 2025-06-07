@@ -26,9 +26,8 @@ export default function RootLayout({
             <Header />
             {children}
           </ThemeProvider>
+          <SpeedInsights />
         </TanStackProvider>
-
-        <SpeedInsights />
       </body>
     </html>
   )

@@ -16,7 +16,7 @@ interface Props extends IProps {
   isLoading?: boolean
 }
 
-export const CategoriesList: React.FC<Props> = ({ className, items, isLoading }) => {
+export default function CategoriesList({ className, items, isLoading }: Props) {
   const activeCategoryId = useCategoryStore(state => state.activeId)
 
   return (

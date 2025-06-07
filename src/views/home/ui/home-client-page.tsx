@@ -1,9 +1,12 @@
+'use client'
+
 import { Container } from '@components'
 import { Title } from '@components/ui'
-import { FilterProducts } from '@features/filter-products'
-import { TopBar } from '@widgets/TopBar'
 
-export default async function HomePage() {
+import { FilterProducts } from '@/src/features/filter-products'
+import TopBar from '@/src/widgets/TopBar/ui/TopBar'
+
+export default function HomeClientPage() {
   return (
     <>
       <Container className=" flex justify-between mt-5">
@@ -19,9 +22,7 @@ export default async function HomePage() {
           </div>
           <div className="w-full">
             <div className="flex-1">
-              <div className="flex flex-col gap-16">
-                {/* <ProductsList title={'Pizzas'} items={pizzas} categoryId={1} /> */}
-              </div>
+              <div className="flex flex-col gap-16"></div>
             </div>
           </div>
         </div>

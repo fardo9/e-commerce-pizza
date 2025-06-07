@@ -12,12 +12,10 @@ import { useIngredients } from '@/src/entities/ingredients/model/use-ingredients
 import { IngredientCheckboxGroup } from '@/src/entities/ingredients/ui/ingredient-checkbox-group'
 
 export const FilterProducts: FC<IProps> = ({ className }) => {
-  const { ingredients, isLoadingIngredients, isError } = useIngredients()
+  const { ingredients, isLoadingIngredients } = useIngredients()
 
   const { values, setValues, setPriceFrom, setPriceTo } = useRangeSliderState([0, 450])
   const sliderRef = useRef<RangeSliderRef>(null)
-
-  console.log('ingredients', ingredients)
 
   return (
     <div className={className}>

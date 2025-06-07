@@ -1,2 +1,2 @@
-export { TanStackProvider } from './TanStackProvider'
-export { ThemeProvider } from './ThemeProvider'
+export { TanStackProvider } from './tanstack-provider'
+export { ThemeProvider } from './theme-provider'

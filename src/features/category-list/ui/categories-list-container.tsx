@@ -1,11 +1,10 @@
 'use client'
 
-import { CategoriesList } from './categories-list'
+import CategoriesList from './categories-list'
 
-import { useCategories } from '@/src/entities/category/model/use-categories'
+import { useCategories } from '@/src/entities/category'
 
-export const CategoriesListContainer = () => {
+export default function CategoriesListContainer() {
   const { categories, isLoading } = useCategories()
-
   return <CategoriesList items={categories} isLoading={isLoading} />
 }
