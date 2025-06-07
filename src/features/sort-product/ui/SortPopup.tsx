@@ -5,7 +5,7 @@ import { cn } from '@shared/lib/utils'
 import { IProps } from '@shared/types'
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui'
 
-export const SortPopup: React.FC<IProps> = ({ className }) => {
+export default function SortPopup({ className }: IProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -23,15 +23,11 @@ export const SortPopup: React.FC<IProps> = ({ className }) => {
       </PopoverTrigger>
       <PopoverContent className="w-[240px]">
         <ul>
-          <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">
-            Popular at first
-          </li>
+          <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">Popular at first</li>
           <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">
             Inexpensive at first
           </li>
-          <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">
-            First expensive
-          </li>
+          <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">First expensive</li>
           <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">
             With the best grade
           </li>

@@ -20,8 +20,9 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./*"],
       "@app/*": ["app/*"],
-      "@pages/*": ["src/pages/*"],
+      "@pages/*": ["src/views/*"],
       "@widgets/*": ["src/widgets/*"],
       "@features/*": ["src/features/*"],
       "@entities/*": ["src/entities/*"],

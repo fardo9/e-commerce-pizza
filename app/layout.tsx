@@ -1,11 +1,11 @@
 import { Nunito } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
-import { Header } from '@shared/components'
+import { Header } from '@features/header'
 
 import './globals.css'
 
-import { ThemeProvider } from './_providers/ThemeProvider'
+import { TanStackProvider, ThemeProvider } from './_providers'
 
 const nunito = Nunito({
   subsets: ['cyrillic'],
@@ -21,12 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={nunito.className}>
-        <ThemeProvider>
-          <Header />
-          {children}
-        </ThemeProvider>
-
-        <SpeedInsights />
+        <TanStackProvider>
+          <ThemeProvider>
+            <Header />
+            {children}
+          </ThemeProvider>
+          <SpeedInsights />
+        </TanStackProvider>
       </body>
     </html>
   )
