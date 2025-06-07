@@ -5,7 +5,7 @@ import { ThemeProvider as Theme } from 'next-themes'
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   return (
-    <Theme attribute="class" defaultTheme="system" enableSystem>
+    <Theme attribute="class" defaultTheme="light" enableSystem>
       {children}
     </Theme>
   )

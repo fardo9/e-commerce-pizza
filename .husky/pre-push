@@ -1,0 +1,5 @@
+branch="$(git symbolic-ref --short HEAD)"
+if [ "$branch" = "main" ]; then
+  echo "⛔️ You can't push directly to main. Use a pull request."
+  exit 1
+fi
