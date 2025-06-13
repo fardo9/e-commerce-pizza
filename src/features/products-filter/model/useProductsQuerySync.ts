@@ -11,14 +11,12 @@ export const useProductsQuerySync = (filters: ReturnType<typeof useProductsFilte
   useEffect(() => {
     if (isMounted.current) {
       const params = {
-        priceFrom: filters.priceRange.values[0],
-        priceTo: filters.priceRange.values[1],
+        from: filters.priceRange.values[0],
+        to: filters.priceRange.values[1],
         ingredients: Array.from(filters.selectedIngredients),
-        pizzaTypes: Array.from(filters.pizzaTypes),
+        types: Array.from(filters.pizzaTypes),
         sizes: Array.from(filters.sizes)
       }
-
-      console.log('FILTER PARAMS:', params)
 
       const query = qs.stringify(params, { arrayFormat: 'comma' })
       router.push(`?${query}`, { scroll: false })
