@@ -1,8 +1,11 @@
-type AwaitedParams<T> = Awaited<T> extends { params: infer P } ? P : never
+type Params = Promise<{ id: string }>
 
-export default async function ProductPage(props: {
-  params: AwaitedParams<{ params: { id: string } }>
-}) {
-  const { params } = props
-  return <h2>Product {params.id}</h2>
+export default async function ProductPage({ params }: { params: Params }) {
+  const { id } = await params
+
+  return (
+    <>
+      <h2>Product {id}</h2>
+    </>
+  )
 }
