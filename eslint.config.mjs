@@ -7,6 +7,7 @@ import importPlugin from 'eslint-plugin-import'
 import sortPlugin from 'eslint-plugin-simple-import-sort'
 import { fileURLToPath } from 'url'
 import { dirname } from 'path'
+import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -35,7 +36,8 @@ export default defineConfig([
     plugins: {
       import: importPlugin,
       'simple-import-sort': sortPlugin,
-      '@next/next': nextPlugin
+      '@next/next': nextPlugin,
+      ...eslintPluginJsxA11y
     },
     settings: {
       'import/resolver': {

@@ -2,12 +2,11 @@
 
 import React from 'react'
 
-import { cn } from '@shared/lib/utils'
-import { IProps } from '@shared/types'
-import { Container } from '@components'
-
-import { CategoriesListContainer } from '@/src/features/category-list'
-import SortPopup from '@/src/features/sort-product/ui/SortPopup'
+import { CategoriesListContainer } from '@/features/category-list'
+import SortPopup from '@/features/sort-product/ui/SortPopup'
+import { Container } from '@/shared/components'
+import { cn } from '@/shared/lib/utils'
+import { IProps } from '@/shared/types'
 
 export default function TopBar({ className }: IProps) {
   return (

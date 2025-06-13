@@ -1,6 +1,6 @@
 import { User } from 'lucide-react'
 
-import { Button } from '@components/ui'
+import { Button } from '@/shared/components/ui'
 
 export const AuthButton = () => (
   <Button variant="outline" className="flex items-center gap-1">

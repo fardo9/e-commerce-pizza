@@ -1,16 +1,23 @@
 'use client'
 
-import { FC, useRef } from 'react'
-
-import { cn } from '@shared/lib/utils'
-import { Title } from '@components/ui'
-import { ProductCard } from '@entities/product'
+import { FC } from 'react'
 
 import { ProductListProps } from '../model/types'
 import { useObserveCategory } from '../model/use-observe-category'
 
-export const ProductsList: FC<ProductListProps> = ({ title, items, listClassName, categoryId, className }) => {
-  const intersectionRef = useRef<HTMLDivElement>(null)
+import { Title } from '@/shared/components/ui'
+import { cn } from '@/shared/lib/utils'
+import { ProductCard } from '@/src/entities/products'
+import { useCreateSafeRef } from '@/src/shared/utils/createRef'
+
+export const ProductsList: FC<ProductListProps> = ({
+  title,
+  items,
+  listClassName,
+  categoryId,
+  className
+}) => {
+  const intersectionRef = useCreateSafeRef<HTMLDivElement>()
 
   useObserveCategory(intersectionRef, categoryId)
 

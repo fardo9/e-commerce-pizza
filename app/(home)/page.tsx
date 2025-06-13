@@ -1,7 +1,7 @@
 'use client'
 
-import HomeClientPage from '@/src/views/home/ui/home-client-page'
+import MainClientPage from '@/src/widgets/main/ui/home-client-page'
 
-export default function HomePage() {
-  return <HomeClientPage />
+export default function MainPage() {
+  return <MainClientPage />
 }

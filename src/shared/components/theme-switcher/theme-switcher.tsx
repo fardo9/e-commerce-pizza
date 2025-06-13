@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes'
 
-import { Button } from '@components/ui'
+import { Button } from '@/shared/components/ui'
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme()

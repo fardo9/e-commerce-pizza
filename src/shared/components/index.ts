@@ -1,4 +1,4 @@
-export { Container } from '@components/container/container'
-export { FilterCheckbox } from '@components/filter-checkbox/filter-checkbox'
-export { default as RangeSlider } from '@components/range-slider/range-slider'
-export { ThemeSwitcher } from '@components/theme-switcher/theme-switcher'
+export { Container } from '@/shared/components/container/container'
+export { ThemeSwitcher } from '@/shared/components/theme-switcher/theme-switcher'
+export { FilterCheckbox } from '@/src/shared/components/ui/filter-checkbox/filter-checkbox'
+export { default as RangeSlider } from '@/src/shared/components/ui/range-slider/range-slider'

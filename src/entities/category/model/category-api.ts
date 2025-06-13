@@ -1,9 +1,7 @@
-import type { Category } from './types'
-
-import { axiosInstance } from '@/src/shared/_api/axios'
 import { ApiRoutes } from '@/src/shared/_api/constants'
-import { request } from '@/src/shared/_api/request'
+import { apiClient } from '@/src/shared/_api/httpClient'
+import { CategoryDTO } from '@/src/shared/types/dto/category.dto'
 
-export const getAllCategories = async (): Promise<Category[]> => {
-  return request(axiosInstance.get<Category[]>(ApiRoutes.CATEGORY))
+export const getAllCategories = async (): Promise<CategoryDTO[]> => {
+  return apiClient.get<CategoryDTO[]>(`/${ApiRoutes.CATEGORY}`)
 }

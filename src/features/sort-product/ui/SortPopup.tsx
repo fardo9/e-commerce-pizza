@@ -1,9 +1,9 @@
 import React from 'react'
 import { ArrowUpDown } from 'lucide-react'
 
-import { cn } from '@shared/lib/utils'
-import { IProps } from '@shared/types'
-import { Popover, PopoverContent, PopoverTrigger } from '@components/ui'
+import { Popover, PopoverContent, PopoverTrigger } from '@/shared/components/ui'
+import { cn } from '@/shared/lib/utils'
+import { IProps } from '@/shared/types'
 
 export default function SortPopup({ className }: IProps) {
   return (
@@ -23,11 +23,15 @@ export default function SortPopup({ className }: IProps) {
       </PopoverTrigger>
       <PopoverContent className="w-[240px]">
         <ul>
-          <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">Popular at first</li>
+          <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">
+            Popular at first
+          </li>
           <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">
             Inexpensive at first
           </li>
-          <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">First expensive</li>
+          <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">
+            First expensive
+          </li>
           <li className="hover:bg-secondary hover:text-primary p-2 px-4 cursor-pointer rounded-md">
             With the best grade
           </li>

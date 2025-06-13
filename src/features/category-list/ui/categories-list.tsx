@@ -1,10 +1,9 @@
 'use client'
 
-import { cn } from '@shared/lib/utils'
-import { useCategoryStore } from '@shared/store/category'
-import { IProps } from '@shared/types'
-import { Skeleton } from '@components/ui'
-
+import { Skeleton } from '@/shared/components/ui'
+import { cn } from '@/shared/lib/utils'
+import { useCategoryStore } from '@/shared/store/category'
+import { IProps } from '@/shared/types'
 import { CategoryLink } from '@/src/entities/category/ui/category-link'
 
 interface Items {
@@ -24,7 +23,10 @@ export default function CategoriesList({ className, items, isLoading }: Props) {
       {isLoading ? (
         <div className="flex gap-2">
           {[...Array(7)].map((_, index) => (
-            <div key={index} className="flex items-center font-bold text-primary h-11 rounded-2xl px-3">
+            <div
+              key={index}
+              className="flex items-center font-bold text-primary h-11 rounded-2xl px-3"
+            >
               <Skeleton className="w-25 h-10 rounded-2xl" />
             </div>
           ))}

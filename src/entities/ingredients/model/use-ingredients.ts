@@ -1,13 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { getAllIngredients } from './ingredients-api'
-
-import { Ingredient } from '@/src/shared/types'
+import { getIngredients } from './ingredients-api'
+import { Ingredient } from './types'
 
 export const useIngredients = () => {
   const { data, isLoading, isError, error } = useQuery<Ingredient[]>({
     queryKey: ['ingredients'],
-    queryFn: getAllIngredients,
+    queryFn: getIngredients,
     staleTime: 1000 * 60 * 10
   })
 
