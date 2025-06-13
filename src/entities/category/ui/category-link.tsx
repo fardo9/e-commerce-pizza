@@ -2,14 +2,9 @@
 
 import Link from 'next/link'
 
-import { cn } from '@shared/lib/utils'
+import { cn } from '@/shared/lib/utils'
 
-interface Props {
-  name: string
-  isActive?: boolean
-}
-
-export const CategoryLink = ({ name, isActive }: Props) => (
+export const CategoryLink = ({ name, isActive }: { name: string; isActive?: boolean }) => (
   <Link
     href={`./#${name.toLowerCase()}`}
     className={cn(

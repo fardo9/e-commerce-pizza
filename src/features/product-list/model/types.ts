@@ -1,16 +1,8 @@
-import { Ingredient } from '@shared/types'
-
-interface Items {
-  id: number
-  name: string
-  price: number
-  imageUrl: string
-  ingredients: Ingredient[]
-}
+import { ProductUI } from '@/src/entities/products'
 
 export interface ProductListProps {
   title: string
-  items: Items[]
+  items: ProductUI[]
   categoryId: number
   listClassName?: string
   className?: string

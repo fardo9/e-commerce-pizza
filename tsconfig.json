@@ -22,18 +22,24 @@
     "paths": {
       "@/*": ["./*"],
       "@app/*": ["app/*"],
-      "@pages/*": ["src/views/*"],
-      "@widgets/*": ["src/widgets/*"],
-      "@features/*": ["src/features/*"],
-      "@entities/*": ["src/entities/*"],
+      "@views/*": ["src/views/*"],
 
-      "@components": ["src/shared/components"],
-      "@components/*": ["src/shared/components/*"],
+      "@/shared/*": ["src/shared/*"],
+      "@/entities/*": ["src/entities/*"],
+      "@/features/*": ["src/features/*"],
+      "@/widgets/*": ["src/widgets/*"],
+      "@/server/*": ["src/server/*"],
 
-      "@ui/*": ["src/shared/ui/*"],
-      "@shared/*": ["src/shared/*"],
-      "@lib/*": ["src/shared/lib/*"],
-      "@types/*": ["src/shared/types/*"]
+      "@/components": ["src/shared/components"],
+      "@/components/*": ["src/shared/components/*"],
+
+      "@/ui/*": ["src/shared/ui/*"],
+      "@/lib/*": ["src/shared/lib/*"],
+      "@/types/*": ["src/shared/types/*"],
+
+      "@/application/*": ["src/server/application/*"],
+      "@/domain/*": ["src/server/domain/*"],
+      "@/infrastructure/*": ["src/server/infrastructure/*"]
     },
     "typeRoots": ["./types", "./node_modules/@types"]
   },

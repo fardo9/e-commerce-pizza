@@ -1,15 +1,10 @@
 import { NextResponse } from 'next/server'
 
-import { prisma } from '@/prisma/prisma-client'
+import { GetCategoriesUseCase } from '@/src/server/application/useCases/getCategories.usecase'
 
 export async function GET() {
-  const category = await prisma.category.findMany({
-    include: {
-      products: {
-        include: { ingredients: true, items: true }
-      }
-    }
-  })
+  const useCase = new GetCategoriesUseCase()
+  const categories = await useCase.execute()
 
-  return NextResponse.json(category)
+  return NextResponse.json(categories)
 }
