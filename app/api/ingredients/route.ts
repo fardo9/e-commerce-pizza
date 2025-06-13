@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server'
 
-import { prisma } from '@/prisma/prisma-client'
+import { IngredientService } from '@/src/server/domain/ingredients/ingredient.service'
 
 export async function GET() {
-  const ingredients = await prisma.ingredient.findMany()
+  const service = new IngredientService()
+  const ingredients = await service.getAll()
 
   return NextResponse.json(ingredients)
 }

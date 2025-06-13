@@ -1,7 +1,3 @@
-export interface Category {
-  id: number
-  name: string
-  createdAt: Date
-  updatedAt: Date
-  // product?: any[] // nee to clarify id necessary
-}
+import { CategoryDTO } from '@/src/shared/types/dto/category.dto'
+
+export type CategoryUI = CategoryDTO

@@ -1,3 +1,5 @@
+import { Ingredient } from '@/src/server/domain/ingredients/ingredient.entity'
+
 export interface IProps {
   className?: string
 }
@@ -8,13 +10,4 @@ export type PizzaItem = {
   price: number
   imageUrl: string
   ingredients: Ingredient[]
-}
-
-export type Ingredient = {
-  id: number
-  name: string
-  createdAt: Date
-  updatedAt: Date
-  imageUrl: string
-  price: number
 }

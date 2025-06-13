@@ -1,7 +1,10 @@
 import { ReactNode } from 'react'
 
-import { Ingredient } from '@/src/shared/types'
+import { IngredientDTO } from '@/src/shared/types/dto/ingredient.dto'
 
+export type Ingredient = IngredientDTO
+
+// change ???
 export interface IngredientCheckboxItem {
   label: string
   name?: string

@@ -1,11 +1,10 @@
 import { Nunito } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
-import { Header } from '@features/header'
-
 import './globals.css'
 
-import { TanStackProvider, ThemeProvider } from './_providers'
+import { Header } from '@/features/header'
+import { TanStackProvider, ThemeProvider } from '@/src/shared/providers'
 
 const nunito = Nunito({
   subsets: ['cyrillic'],

@@ -1,17 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-import { prisma } from '@/prisma/prisma-client'
+import { SearchProductUseCase } from '@/src/server/application/useCases/searchProduct.usecase'
 
 export async function GET(req: NextRequest) {
   const query = req.nextUrl.searchParams.get('query') || ''
-  const products = await prisma.product.findMany({
-    where: {
-      name: {
-        contains: query,
-        mode: 'insensitive'
-      }
-    },
-    take: 5
-  })
+
+  const useCase = new SearchProductUseCase()
+  const products = await useCase.execute(query)
+
   return NextResponse.json(products)
 }

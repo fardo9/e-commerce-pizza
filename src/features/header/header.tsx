@@ -1,11 +1,12 @@
 'use client'
 
-import { cn } from '@shared/lib/utils'
-import type { IProps } from '@shared/types'
-import { Container } from '@components'
-import { ThemeSwitcher } from '@components/theme-switcher/theme-switcher'
-
 import { AuthButton, CartButton, Logo } from './ui'
+
+import { Container } from '@/shared/components'
+import { ThemeSwitcher } from '@/shared/components/theme-switcher/theme-switcher'
+import { cn } from '@/shared/lib/utils'
+import type { IProps } from '@/shared/types'
+import { SearchProduct } from '@/src/features/search-products'
 
 export function Header({ className }: IProps) {
   return (
@@ -13,7 +14,9 @@ export function Header({ className }: IProps) {
       <Container className="flex items-center justify-between py-8">
         <Logo />
 
-        <div className="mx-10 flex-1">{/* <SearchInput /> */}</div>
+        <div className="mx-10 flex-1">
+          <SearchProduct />
+        </div>
 
         <div className="flex items-center gap-3">
           <AuthButton />
