@@ -10,15 +10,6 @@ import { cn } from '@/src/shared/lib/utils'
 export default function ProductListContainer() {
   const { categories, isLoading } = useCategories()
 
-  if (isLoading) {
-    return (
-      <div className="flex flex-col gap-16">
-        {Array.from({ length: 3 }).map((_, i) => (
-          <ProductsListSkeleton key={i} />
-        ))}
-      </div>
-    )
-  }
   return (
     <div className="flex flex-col gap-16">
       {isLoading ? (

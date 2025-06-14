@@ -1,6 +1,7 @@
+import { PrismaIngredient } from '../../infrastructure/types/prisma-ingredient.types'
 import { Ingredient } from './ingredient.entity'
 
-export const mapIngredientToDomain = (ingredient: any): Ingredient => ({
+export const mapIngredientToDomain = (ingredient: PrismaIngredient): Ingredient => ({
   id: ingredient.id,
   name: ingredient.name,
   price: ingredient.price,

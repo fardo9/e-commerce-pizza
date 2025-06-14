@@ -7,6 +7,6 @@ export class GetCategoriesUseCase {
 
   async execute(): Promise<CategoryDTO[]> {
     const domainCategories = await this.categoryRepository.findAll()
-    return domainCategories.map(mapCategoryToDTO)
+    return domainCategories.map(mapCategoryToDTO).filter(category => category.products.length > 0)
   }
 }

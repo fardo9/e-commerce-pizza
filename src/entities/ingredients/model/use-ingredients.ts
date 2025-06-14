@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
 
 import { getIngredients } from './ingredients-api'
-import { Ingredient } from './types'
+
+import { IngredientDTO } from '@/src/server/dto/ingredients/ingredient.dto'
 
 export const useIngredients = () => {
-  const { data, isLoading, isError, error } = useQuery<Ingredient[]>({
+  const { data, isLoading, isError, error } = useQuery<IngredientDTO[]>({
     queryKey: ['ingredients'],
     queryFn: getIngredients,
     staleTime: 1000 * 60 * 10
