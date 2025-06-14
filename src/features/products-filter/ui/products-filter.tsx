@@ -31,7 +31,7 @@ export const ProductsFilter: FC<IProps> = ({ className }) => {
           title="Dough type"
           items={DOUGH_OPTIONS}
           selected={filter.pizzaTypes}
-          onToggle={filter.setPizzaTypes}
+          onToggle={filter.setTypes}
         />
 
         <SizeCheckboxGroup
@@ -52,7 +52,7 @@ export const ProductsFilter: FC<IProps> = ({ className }) => {
             min={0}
             max={200}
             value={filter.priceRange.values[0]}
-            onChange={e => filter.priceRange.setPriceFrom(Number(e.target.value))}
+            onChange={e => filter.priceRange.setFrom(Number(e.target.value))}
           />
           <Input
             type="number"
@@ -60,7 +60,7 @@ export const ProductsFilter: FC<IProps> = ({ className }) => {
             max={300}
             placeholder="300"
             value={filter.priceRange.values[1]}
-            onChange={e => filter.priceRange.setPriceTo(Number(e.target.value))}
+            onChange={e => filter.priceRange.setTo(Number(e.target.value))}
           />
         </div>
 
@@ -80,7 +80,7 @@ export const ProductsFilter: FC<IProps> = ({ className }) => {
             title="Ingredients"
             items={ingredients ?? []}
             isLoading={isLoadingIngredients}
-            onToggle={filter.setSelectedIngredients}
+            onToggle={filter.setIngredients}
             selected={filter.selectedIngredients}
           />
         </div>

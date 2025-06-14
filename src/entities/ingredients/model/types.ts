@@ -1,10 +1,7 @@
 import { ReactNode } from 'react'
 
-import { IngredientDTO } from '@/src/shared/types/dto/ingredient.dto'
+import { IngredientDTO } from '@/src/server/dto/ingredients/ingredient.dto'
 
-export type Ingredient = IngredientDTO
-
-// change ???
 export interface IngredientCheckboxItem {
   label: string
   name?: string
@@ -17,8 +14,8 @@ export interface IngredientCheckboxItem {
 export interface IngredientsProps {
   title: string
   name: string
-  items: Ingredient[]
-  defaultItems?: Ingredient[]
+  items: IngredientDTO[]
+  defaultItems?: IngredientDTO[]
   limit?: number
   isLoading?: boolean
   isError?: boolean

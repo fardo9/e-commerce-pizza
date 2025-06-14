@@ -1,4 +1,4 @@
-import { IngredientDTO } from './ingredient.dto'
+import { IngredientDTO } from '../ingredients/ingredient.dto'
 
 export type ProductDTO = {
   id: number
@@ -7,5 +7,5 @@ export type ProductDTO = {
   categoryId: number
   createdAt: string
   updatedAt: string
-  ingredient: IngredientDTO[]
+  ingredients: IngredientDTO[]
 }

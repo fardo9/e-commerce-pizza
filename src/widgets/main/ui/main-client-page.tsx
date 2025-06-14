@@ -2,6 +2,7 @@
 
 import { Container } from '@/components'
 import { Title } from '@/components/ui'
+import ProductListContainer from '@/src/features/product-list/ui/product-list-container'
 import { ProductsFilter } from '@/src/features/products-filter/ui/products-filter'
 import TopBar from '@/src/widgets/TopBar/ui/TopBar'
 
@@ -21,7 +22,7 @@ export default function MainClientPage() {
           </div>
           <div className="w-full">
             <div className="flex-1">
-              <div className="flex flex-col gap-16"></div>
+              <ProductListContainer />
             </div>
           </div>
         </div>

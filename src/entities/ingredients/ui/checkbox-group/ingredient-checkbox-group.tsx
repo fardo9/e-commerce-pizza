@@ -1,12 +1,11 @@
 'use client'
 
-import { Ingredient } from '../../model/types'
-
+import { IngredientDTO } from '@/src/server/dto/ingredients/ingredient.dto'
 import { CheckboxGroupBase } from '@/src/shared/components/ui/checkbox-group/checkbox-group-base'
 
 interface IngredientCheckboxGroupProps {
   title: string
-  items: Ingredient[]
+  items: IngredientDTO[]
   selected: Set<string>
   onToggle: (value: string) => void
   isLoading?: boolean
