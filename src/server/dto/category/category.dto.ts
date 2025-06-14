@@ -1,9 +1,9 @@
-import { Product } from '@/src/server/domain/product/products.entity'
+import { ProductDTO } from '../product/product.dto'
 
 export type CategoryDTO = {
   id: number
   name: string
-  products: Product[]
+  products: ProductDTO[]
   createdAt: string
   updatedAt: string
 }

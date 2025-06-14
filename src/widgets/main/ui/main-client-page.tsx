@@ -2,10 +2,16 @@
 
 import { Container } from '@/components'
 import { Title } from '@/components/ui'
+import { useCategories } from '@/src/entities/category'
+import { ProductsList } from '@/src/features/product-list'
+import ProductListContainer from '@/src/features/product-list/ui/product-list-container'
 import { ProductsFilter } from '@/src/features/products-filter/ui/products-filter'
+import { cn } from '@/src/shared/lib/utils'
 import TopBar from '@/src/widgets/TopBar/ui/TopBar'
 
 export default function MainClientPage() {
+  const { categories, isLoading } = useCategories()
+
   return (
     <>
       <Container className=" flex justify-between mt-5">
@@ -21,7 +27,7 @@ export default function MainClientPage() {
           </div>
           <div className="w-full">
             <div className="flex-1">
-              <div className="flex flex-col gap-16"></div>
+              <ProductListContainer />
             </div>
           </div>
         </div>
