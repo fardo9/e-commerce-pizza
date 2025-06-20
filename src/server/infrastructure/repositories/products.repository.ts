@@ -26,7 +26,17 @@ export class ProductsRepository {
     const product = (await prisma.product.findUnique({
       where: { id },
       include: {
-        ingredients: true
+        ingredients: true,
+        items: true,
+        category: {
+          include: {
+            products: {
+              include: {
+                items: true
+              }
+            }
+          }
+        }
       }
     })) as PrismaProductWithIngredients | null
 

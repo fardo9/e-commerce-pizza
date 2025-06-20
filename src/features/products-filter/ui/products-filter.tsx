@@ -14,9 +14,7 @@ import { IngredientCheckboxGroup } from '@/src/entities/ingredients'
 import { useIngredients } from '@/src/entities/ingredients/model/use-ingredients'
 import {
   DOUGH_OPTIONS,
-  MAX_PRICE_FROM,
   MAX_PRICE_TO,
-  MIN_PRICE_FROM,
   MIN_PRICE_TO,
   SIZE_OPTIONS
 } from '@/src/shared/config/filter-options'

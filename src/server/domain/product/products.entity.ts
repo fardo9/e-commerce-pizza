@@ -1,4 +1,5 @@
 import { Ingredient } from '../ingredients/ingredient.entity'
+import { ProductItem } from '../product-types/item-types.entitiy'
 
 export interface Product {
   id: number
@@ -8,4 +9,5 @@ export interface Product {
   createdAt: Date
   updatedAt: Date
   ingredients: Ingredient[]
+  items: ProductItem[]
 }

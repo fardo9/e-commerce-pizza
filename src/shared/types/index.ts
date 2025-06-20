@@ -1,5 +1,5 @@
-import { Ingredient } from '@/src/server/domain/ingredients/ingredient.entity'
-
 export interface IProps {
   className?: string
 }
+
+export type Params = Promise<{ id: number }>

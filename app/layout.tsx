@@ -3,7 +3,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import './globals.css'
 
-import { Header } from '@/features/header'
 import { TanStackProvider, ThemeProvider } from '@/src/shared/providers'
 
 const nunito = Nunito({
@@ -21,10 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={nunito.className}>
         <TanStackProvider>
-          <ThemeProvider>
-            <Header />
-            {children}
-          </ThemeProvider>
+          <ThemeProvider>{children}</ThemeProvider>
           <SpeedInsights />
         </TanStackProvider>
       </body>
