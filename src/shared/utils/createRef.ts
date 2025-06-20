@@ -1,7 +1,7 @@
 import { RefObject, useRef } from 'react'
 
-export type SafeRef<T> = RefObject<T | null>
+export type SafeRef<T> = RefObject<T>
 
 export function useCreateSafeRef<T>(): SafeRef<T> {
-  return useRef<T>(null)
+  return useRef<T>(null as unknown as T)
 }
