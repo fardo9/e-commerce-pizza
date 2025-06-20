@@ -2,7 +2,7 @@
 
 import { FC } from 'react'
 
-import { useProductsFilter } from '../model/useProductsFilter'
+import { useProductsFilter } from '../model/state/products-filter-query-params'
 import { useProductsQuerySync } from '../model/useProductsQuerySync'
 import { DoughCheckboxGroup } from './dough-checkbox-group'
 import { SizeCheckboxGroup } from './size-checkbox-group'
@@ -12,7 +12,12 @@ import { Input, Title } from '@/components/ui'
 import { IProps } from '@/shared/types'
 import { IngredientCheckboxGroup } from '@/src/entities/ingredients'
 import { useIngredients } from '@/src/entities/ingredients/model/use-ingredients'
-import { DOUGH_OPTIONS, SIZE_OPTIONS } from '@/src/shared/config/filter-options'
+import {
+  DOUGH_OPTIONS,
+  MAX_PRICE_TO,
+  MIN_PRICE_TO,
+  SIZE_OPTIONS
+} from '@/src/shared/config/filter-options'
 import { useDebug } from '@/src/shared/utils/use-debug'
 
 export const ProductsFilter: FC<IProps> = ({ className }) => {
@@ -56,9 +61,9 @@ export const ProductsFilter: FC<IProps> = ({ className }) => {
           />
           <Input
             type="number"
-            min={100}
-            max={300}
-            placeholder="300"
+            min={MIN_PRICE_TO}
+            max={MAX_PRICE_TO}
+            placeholder={`${MAX_PRICE_TO}`}
             value={filter.priceRange.values[1]}
             onChange={e => filter.priceRange.setTo(Number(e.target.value))}
           />

@@ -1,3 +1,4 @@
+import { mapProductItemToDomain } from '../product-types/item-types.mapper'
 import { Product } from './products.entity'
 
 import { mapIngredientToDomain } from '@/src/server/domain/ingredients/ingredient.mapper'
@@ -10,5 +11,6 @@ export const mapProductToDomain = (product: PrismaProductWithIngredients): Produ
   categoryId: product.categoryId,
   createdAt: product.createdAt,
   updatedAt: product.updatedAt,
-  ingredients: product.ingredients?.map(mapIngredientToDomain) ?? []
+  ingredients: product.ingredients?.map(mapIngredientToDomain) ?? [],
+  items: product.items?.map(mapProductItemToDomain) ?? []
 })

@@ -4,7 +4,7 @@ import { Container } from '@/components'
 import { Title } from '@/components/ui'
 import ProductListContainer from '@/src/features/product-list/ui/product-list-container'
 import { ProductsFilter } from '@/src/features/products-filter/ui/products-filter'
-import TopBar from '@/src/widgets/TopBar/ui/TopBar'
+import TopBar from '@/src/widgets/top-bar/ui/top-bar'
 
 export default function MainClientPage() {
   return (

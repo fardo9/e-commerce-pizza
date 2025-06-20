@@ -21,4 +21,25 @@ export class ProductsRepository {
 
     return products.map(mapProductToDomain)
   }
+
+  async findById(id: number): Promise<Product | null> {
+    const product = (await prisma.product.findUnique({
+      where: { id },
+      include: {
+        ingredients: true,
+        items: true,
+        category: {
+          include: {
+            products: {
+              include: {
+                items: true
+              }
+            }
+          }
+        }
+      }
+    })) as PrismaProductWithIngredients | null
+
+    return product ? mapProductToDomain(product) : null
+  }
 }
